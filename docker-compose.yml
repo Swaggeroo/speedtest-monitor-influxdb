@@ -2,7 +2,7 @@ version: "3"
 
 services:
   internet-monitor:
-    image: todo
+    image: ghcr.io/swaggeroo/speedtest-monitor-influxdb
     restart: unless-stopped
     depends_on:
       - influxdb2
