@@ -39,3 +39,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          
+      - name: Latest tag
+        uses: EndBug/latest-tag@v1.5.1
+
