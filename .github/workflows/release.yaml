@@ -5,7 +5,7 @@ on:
     types: [published, edited]
 
 jobs
-  actions-tagger:
+actions-tagger:
     runs-on: windows-latest
     steps:
       - uses: Actions-R-Us/actions-tagger@latest
