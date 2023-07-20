@@ -1,8 +1,6 @@
-import sys
 import os
 import re
 import subprocess
-import time
 from influxdb_client import InfluxDBClient
 import threading
 import time
