@@ -66,6 +66,7 @@ else:
 def run_speedtest():
     print("Running speedtest " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     response = subprocess.Popen('/usr/bin/speedtest --accept-license --accept-gdpr', shell=True, stdout=subprocess.PIPE).stdout.read().decode('utf-8')
+    print("Speedtest complete now parsing results")
 
     ping = re.search('Latency:\s+(.*?)\s', response, re.MULTILINE)
     download = re.search('Download:\s+(.*?)\s', response, re.MULTILINE)
