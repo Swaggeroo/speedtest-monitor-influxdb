@@ -4,7 +4,7 @@ on:
   push:
     branches: ['master']
   schedule:
-    - cron: "55 12 * * *"
+    - cron: "0 0 3 * *"
   workflow_dispatch:
 
 env:
@@ -30,11 +30,6 @@ jobs:
         with:
           base-image: python:3
           image: swaggeroo/speedtest-monitor-influxdb
-        env:
-          DEBUG: true
-
-      - name: Test Ouptut
-        run: echo ${{ steps.check.outputs.needs-updating }}
 
       - name: Log in to Docker Hub
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
