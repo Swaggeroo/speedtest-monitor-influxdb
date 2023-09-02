@@ -3,8 +3,6 @@ name: Auto Build on Base Image Change
 on:
   schedule:
     - cron: "* * * * *"
-  workflow_dispatch:
-
 
 jobs:
 
@@ -24,9 +22,7 @@ jobs:
 
       - name: Export Variable
         id: exportvar
-        run: echo "needs-updating=" >> $GITHUB_ENV && echo steps.baseupdatecheck.outputs.needs-updating >> $GITHUB_ENV
-
-
+        run: echo "needs-updating={{steps.baseupdatecheck.outputs.needs-updating}}" >> $GITHUB_ENV && echo $GITHUB_ENV
       # only execute subsequent steps if an update is actually NEEDED.
       # unfortunately we need to add an if-condition to all steps now
       # because a clean exit can't be triggered within a job it seems
