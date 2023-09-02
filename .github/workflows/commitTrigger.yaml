@@ -1,0 +1,12 @@
+name: Trigger publish on commit
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  dummyJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dummyStep
+        run: echo "Triggering upload"
