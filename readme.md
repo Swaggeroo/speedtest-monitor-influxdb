@@ -6,7 +6,7 @@ It uses the CLI of [speedtest.net](https://www.speedtest.net/) service to measur
 ### IMPORTANT: 
 **This is not an official speedtest.net client, it is a third-party implementation. \
 You have to agree to the speedtest.net [EULA](https://www.speedtest.net/about/eula), [Terms](https://www.speedtest.net/about/terms) and [Privacy](https://www.speedtest.net/about/privacy) before using it. (You can accept them via [ENV-VAR](#environment-variables)) \
-Only non-commercial is allowed.**
+Only non-commercial use is allowed.**
 
 ## Usage
 A sample docker-compose file is provided in the repository.
