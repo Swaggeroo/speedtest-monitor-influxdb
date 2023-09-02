@@ -23,12 +23,10 @@ jobs:
 
       - name: Docker Image Update Checker
         id: baseupdatecheck
-        uses: lucacome/docker-image-update-checker@v1.1.0
+        uses: lucacome/docker-image-update-checker@v1
         with:
           base-image: python:3
           image: ghcr.io/swaggeroo/speedtest-monitor-influxdb:latest
-        env:
-          DEBUG: true
 
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
