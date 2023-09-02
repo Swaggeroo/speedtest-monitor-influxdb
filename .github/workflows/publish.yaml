@@ -4,7 +4,7 @@ on:
   push:
     branches: ['master']
   schedule:
-    - cron: "49 14 * * *"
+    - cron: "55 12 * * *"
 
 env:
   REGISTRY: ghcr.io
