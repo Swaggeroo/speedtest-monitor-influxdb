@@ -2,7 +2,7 @@ name: Auto Build on Base Image Change
 
 on:
   schedule:
-    - cron: "0 0 3 * *"
+    - cron: "* * * * *"
   workflow_dispatch:
 
 
@@ -22,7 +22,7 @@ jobs:
           base-image: library/golang:alpine
           image: flypenguin/homepage-builder # update for your image
 
-      - name Export Variable
+      - name: Export Variable
         id: exportvar
         run: echo "needs-updating=" >> $GITHUB_ENV && echo steps.baseupdatecheck.outputs.needs-updating >> $GITHUB_ENV
 
