@@ -1,11 +1,9 @@
-name: Bump Version Inside PR (Renovate)
+name: Bump Version Renovate
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+  push:
+    branches:
+      - master
 
 jobs:
   bump-version:
@@ -16,20 +14,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Set up Git
-        run: |
-          git config user.name "renovate[bot]"
-          git config user.email "renovate[bot]@users.noreply.github.com"
-
-      - name: Fetch latest changes
-        run: |
-          git fetch origin
-          git checkout ${{ github.head_ref }}
-          git pull --rebase origin ${{ github.head_ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: Read current version
         id: get_version
@@ -56,8 +40,10 @@ jobs:
 
       - name: Commit new version
         run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
           git add -A
           git commit -m "chore: bump version to ${{ env.NEW_VERSION }} inside PR [skip ci]"
-          git push origin ${{ github.head_ref }}
+          git push origin master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

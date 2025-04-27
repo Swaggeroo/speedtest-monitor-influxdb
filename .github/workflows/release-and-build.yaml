@@ -6,6 +6,10 @@ on:
       - master
     paths:
       - "version.txt"
+  workflow_run:
+    workflows: [ "Bump Version Renovate" ]
+    types:
+      - completed
 
 jobs:
   create-release:
@@ -15,6 +19,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Read current version
         id: version
@@ -47,6 +53,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Read current version
         id: version
