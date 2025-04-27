@@ -89,10 +89,10 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/${{ env.OWNER }}/${{ env.REPO }}:${{ env.VERSION }}
-            ghcr.io/${{ env.OWNER }}/${{ env.REPO }}:latest
-            docker.io/${{ secrets.DOCKER_USERNAME }}/${{ env.REPO }}:${{ env.VERSION }}
-            docker.io/${{ secrets.DOCKER_USERNAME }}/${{ env.REPO }}:latest
+            ghcr.io/${{ env.OWNER_LC }}/${{ env.REPO_LC }}:${{ env.VERSION }}
+            ghcr.io/${{ env.OWNER_LC }}/${{ env.REPO_LC }}:latest
+            docker.io/${{ secrets.DOCKER_USERNAME }}/${{ env.REPO_LC }}:${{ env.VERSION }}
+            docker.io/${{ secrets.DOCKER_USERNAME }}/${{ env.REPO_LC }}:latest
           labels: |
             org.opencontainers.image.source=${{ github.event.repository.html_url }}
             org.opencontainers.image.version=${{ env.VERSION }}
