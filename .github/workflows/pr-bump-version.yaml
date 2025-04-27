@@ -9,7 +9,7 @@ on:
 
 jobs:
   bump-version:
-    if: github.actor == 'renovate[bot]'
+    if: github.actor == 'renovate'
     permissions:
       contents: write
     runs-on: ubuntu-latest
