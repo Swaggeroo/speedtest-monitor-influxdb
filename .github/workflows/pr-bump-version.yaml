@@ -45,5 +45,5 @@ jobs:
           git add version.txt
           git commit -m "chore: bump version to ${{ env.NEW_VERSION }} inside PR [skip ci]"
           git fetch origin ${{ github.head_ref }}
-          git merge origin/${{ github.head_ref }} --no-edit
+          git merge origin/${{ github.head_ref }} --allow-unrelated-histories --no-edit
           git push origin HEAD:${{ github.head_ref }}
